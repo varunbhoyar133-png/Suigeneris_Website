@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUNARC 2.0 | Build Your Personalized AI Chatbot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <meta name="description" content="LUNARC 2.0 – A beginner-friendly, one-day AI building experience. Learn AI, APIs & Antigravity. Build your own personalized AI chatbot. Organized by SuiGeneris, CSE Dept., SBJITMR, Nagpur.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== SPLASH SCREEN ===== -->
+    <div id="splash">
+        <div class="splash-grid"></div>
+        <div class="splash-glow-1"></div>
+        <div class="splash-glow-2"></div>
+        <div class="splash-content">
+            <div class="splash-logo">LUNARC <span>2.0</span></div>
+            <div class="splash-tagline">Don't Just Use AI. Build Your Own.</div>
+            <button id="init-btn" onclick="initializeSite()">
+                <span class="btn-inner">⚡ INITIALIZE SYSTEM</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== MAIN SITE ===== -->
+    <div id="main-site" class="hidden">
+
+        <!-- NAV -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo nav-left">
+                    <img src="assets/sbjitmr.png" alt="SBJITMR" onerror="this.style.display='none';document.getElementById('nav-left-txt').style.display='block'">
+                    <span id="nav-left-txt" class="nav-logo-txt" style="display:none">SBJITMR</span>
+                </div>
+                <div class="nav-center-logo">LUNARC <span>2.0</span></div>
+                <div class="nav-logo nav-right">
+                    <img src="assets/suigeneris.png" alt="SuiGeneris" onerror="this.style.display='none';document.getElementById('nav-right-txt').style.display='block'">
+                    <span id="nav-right-txt" class="nav-logo-txt" style="display:none">SuiGeneris</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section id="hero">
+            <div id="shader-canvas"></div>
+            <div class="hero-bg-grid"></div>
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    SuiGeneris · CSE Department · SBJITMR, Nagpur
+                </div>
+                <h1 class="hero-title">LUNARC <span class="gradient-text">2.0</span></h1>
+                <p class="hero-sub">
+                    <span class="sub-1">Agentic AI</span> &nbsp;•&nbsp;
+                    <span class="sub-2">Antigravity</span> &nbsp;•&nbsp;
+                    <span class="sub-3">Personalized AI Chatbot</span>
+                </p>
+                <div class="hero-card glass-card">
+                    <p>A beginner-friendly, one-day AI building experience. Learn how AI works, understand APIs, explore AI-assisted development with <strong>Antigravity</strong>, and build your very own <strong>personalized AI chatbot</strong> — no advanced experience needed.</p>
+                </div>
+                <div class="hero-details">
+                    <div class="detail-chip">📅 27 August 2026</div>
+                    <div class="detail-chip">⏰ 10:30 AM – 5:00 PM</div>
+                    <div class="detail-chip">📍 MBA Seminar Hall, SBJITMR</div>
+                    <div class="detail-chip">👤 Single &amp; Duo</div>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSexWOxyiI9WYIoBmGdp2Th3JpQERR3GJZQtqqF0eM6RXPXx4g/viewform?usp=publish-editor" target="_blank" id="register-btn" class="btn-3d">
+                    Register Now →
+                </a>
+            </div>
+        </section>
+
+        <!-- WHY LUNARC -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Why Attend</div>
+                    <h2>Why <span class="gradient-text">LUNARC 2.0</span>?</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="glass-card about-card reveal">
+                        <div class="card-icon">🤖</div>
+                        <h3>Learn AI & APIs</h3>
+                        <p>Understand how modern AI systems work and how to harness powerful APIs to build intelligent applications from scratch.</p>
+                    </div>
+                    <div class="glass-card about-card reveal" style="transition-delay:0.1s">
+                        <div class="card-icon">🔧</div>
+                        <h3>Build with Antigravity</h3>
+                        <p>Get hands-on experience with Antigravity — an AI-assisted development platform for building and deploying your own AI agents.</p>
+                    </div>
+                    <div class="glass-card about-card reveal" style="transition-delay:0.2s">
+                        <div class="card-icon">🧠</div>
+                        <h3>Explore Agentic AI</h3>
+                        <p>Learn about autonomous AI agents that can reason, plan, and act. Understand how Agentic AI is reshaping the way software is built.</p>
+                    </div>
+                    <div class="glass-card about-card reveal" style="transition-delay:0.3s">
+                        <div class="card-icon">💬</div>
+                        <h3>Build Your AI Chatbot</h3>
+                        <p>Design and create your own personalized AI chatbot — customized with its own personality, knowledge, and capabilities.</p>
+                    </div>
+                    <div class="glass-card about-card reveal" style="transition-delay:0.4s">
+                        <div class="card-icon">🏆</div>
+                        <h3>LUNARC AI Hackathon</h3>
+                        <p>Apply everything in a live mini-hackathon. Build your project, demo it, compete, and win exciting prizes.</p>
+                    </div>
+                    <div class="glass-card about-card reveal" style="transition-delay:0.5s">
+                        <div class="card-icon">🌱</div>
+                        <h3>Beginner Friendly</h3>
+                        <p>Zero advanced experience required. LUNARC is built for curious minds eager to learn, experiment, and create.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT FLOW -->
+        <section id="schedule" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Schedule</div>
+                    <h2>Event <span class="gradient-text">Flow</span></h2>
+                </div>
+                <div class="timeline-wrapper reveal"><div class="timeline"><div class="timeline-item">
+                            <span class="timeline-time">10:30</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Registration &amp; Attendance</h4><p>Check-in, collect your kit and settle in.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">10:55</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Seating &amp; Technical Setup</h4><p>Get your devices ready for the hands-on sessions ahead.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">11:00</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Welcome + Lamp Lighting</h4><p>Official inauguration and welcome address.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">11:05</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Event Introduction + HOD Address</h4><p>Overview of LUNARC 2.0 and address by the Head of Department.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">11:25</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Speaker Introduction</h4><p>Meet the minds guiding you through the day.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">11:30</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Agentic AI Seminar</h4><p>Deep dive into Agentic AI, APIs, and building with Antigravity.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">1:15</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Interactive Q&amp;A — Slido</h4><p>Live Q&amp;A session with the speaker via Slido.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">1:45</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>🍽️ Break / Networking</h4><p>Lunch break — recharge, connect, and brainstorm your hackathon idea.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">2:15</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Hackathon Briefing</h4><p>Rules, judging criteria, and problem statement revealed.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">2:30</span>
+                            <div class="timeline-node"><div class="timeline-dot active"></div></div>
+                            <div class="timeline-card glass-card highlight-card"><h4>🚀 LUNARC Agentic AI Hackathon</h4><p>Build → Demo → Compete. Apply everything you've learned!</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">4:15</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Judging &amp; Project Demos</h4><p>Present your project to the judges and audience.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">5:00</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>🏆 Results, Awards &amp; Certificates</h4><p>Winners announced and certificates distributed.</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">5:15</span>
+                            <div class="timeline-node"><div class="timeline-dot"></div></div>
+                            <div class="timeline-card glass-card"><h4>Vote of Thanks</h4><p>Closing remarks and thank you from SuiGeneris.</p></div>
+                        </div>
+                    </div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIZE POOL -->
+        <section id="prizes" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Prizes</div>
+                    <h2>Prize <span class="gradient-text">Pool</span></h2>
+                    <p class="section-desc">Compete in the LUNARC Agentic AI Hackathon and win!</p>
+                </div>
+                <div class="prize-pool-banner reveal">
+                    <div class="prize-pool-total">
+                        <div class="prize-pool-label">Total Prize Pool</div>
+                        <div class="prize-pool-amount">₹5,000</div>
+                    </div>
+                </div>
+                <p class="prize-note reveal">+ Certificates of Participation for all attendees &nbsp;•&nbsp; Merit Certificates for winners</p>
+            </div>
+        </section>
+
+        <!-- WHAT YOU'LL DO -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Experience</div>
+                    <h2>What You'll <span class="gradient-text">Build &amp; Learn</span></h2>
+                </div>
+                <div class="expect-grid">
+                    <div class="expect-card glass-card reveal">
+                        <div class="expect-num">01</div>
+                        <h3>Learn AI &amp; APIs</h3>
+                        <p>Understand how Large Language Models work and how to plug them into your own applications via APIs.</p>
+                    </div>
+                    <div class="expect-card glass-card reveal" style="transition-delay:0.1s">
+                        <div class="expect-num">02</div>
+                        <h3>Build Your First AI Chatbot</h3>
+                        <p>From zero to a working chatbot in one day. Step-by-step, guided and hands-on.</p>
+                    </div>
+                    <div class="expect-card glass-card reveal" style="transition-delay:0.2s">
+                        <div class="expect-num">03</div>
+                        <h3>Personalize Your AI</h3>
+                        <p>Give your chatbot a unique personality, knowledge base, and capabilities tailored to what you care about.</p>
+                    </div>
+                    <div class="expect-card glass-card reveal" style="transition-delay:0.3s">
+                        <div class="expect-num">04</div>
+                        <h3>Explore Agentic AI</h3>
+                        <p>Go beyond chatbots — understand how autonomous AI agents plan, reason, and take actions.</p>
+                    </div>
+                    <div class="expect-card glass-card reveal" style="transition-delay:0.4s">
+                        <div class="expect-num">05</div>
+                        <h3>Compete in the Hackathon</h3>
+                        <p>Apply your skills in a live hackathon. Build something real, demo it, and compete for prizes.</p>
+                    </div>
+                    <div class="expect-card glass-card reveal" style="transition-delay:0.5s">
+                        <div class="expect-num">06</div>
+                        <h3>Build → Demo → Compete</h3>
+                        <p>The full experience — idea to implementation to demonstration — all in one day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTRATION -->
+        <section id="pricing" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Registration</div>
+                    <h2>Secure Your <span class="gradient-text">Spot</span></h2>
+                    <p class="section-desc">Limited registrations available. Register early to lock in the best price.</p>
+                </div>
+
+                <!-- Warning Box -->
+                <div class="warning-box reveal">
+                    <span class="warning-icon">⚠️</span>
+                    <p>Registration will be considered <strong>complete only after successful payment</strong> and submission of valid payment details (UTR/Transaction ID + Payment Receipt).</p>
+                </div>
+
+                <div class="pricing-grid reveal">
+                    <!-- Early Bird -->
+                    <div class="pricing-card glass-card featured">
+                        <div class="pricing-ribbon">Best Value</div>
+                        <div class="pricing-header">
+                            <span class="pricing-tag">🐣 Early Bird</span>
+                            <div class="pricing-amount">₹90<span>/person</span></div>
+                        </div>
+                        <p class="pricing-deadline">🐣 Early Bird — valid <strong>till 23rd August</strong></p>
+                        <ul class="pricing-features">
+                            <li>Full Event Access (10:30 AM – 5:15 PM)</li>
+                            <li>🍽️ Meal Included</li>
+                            <li>Both AI Workshops</li>
+                            <li>LUNARC AI Hackathon Entry</li>
+                            <li>Mentorship &amp; Guided Sessions</li>
+                            <li>Certificate of Participation</li>
+                            <li>Networking Opportunity</li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSexWOxyiI9WYIoBmGdp2Th3JpQERR3GJZQtqqF0eM6RXPXx4g/viewform?usp=publish-editor" target="_blank" class="btn-3d full-btn">Register Now →</a>
+                    </div>
+
+                    <!-- Regular -->
+                    <div class="pricing-card glass-card">
+                        <div class="pricing-header">
+                            <span class="pricing-tag">🔥 Regular</span>
+                            <div class="pricing-amount">₹110<span>/person</span></div>
+                        </div>
+                        <p class="pricing-deadline" style="color:#fb923c">🔥 From <strong>24th August</strong> onwards</p>
+                        <ul class="pricing-features">
+                            <li>Full Event Access (10:30 AM – 5:15 PM)</li>
+                            <li>🍽️ Meal Included</li>
+                            <li>Both AI Workshops</li>
+                            <li>LUNARC AI Hackathon Entry</li>
+                            <li>Mentorship &amp; Guided Sessions</li>
+                            <li>Certificate of Participation</li>
+                            <li>Networking Opportunity</li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSexWOxyiI9WYIoBmGdp2Th3JpQERR3GJZQtqqF0eM6RXPXx4g/viewform?usp=publish-editor" target="_blank" class="secondary-btn full-btn">Register Now →</a>
+                    </div>
+                </div>
+
+                <!-- Form Fields Info -->
+                <div class="form-info-section reveal">
+                    <h3>What to Have Ready When Registering</h3>
+                    <div class="form-fields-grid">
+                        <div class="form-field-item">
+                            <span class="field-icon">👤</span>
+                            <div>
+                                <strong>Full Name &amp; USN</strong>
+                                <p>Your personal details for verification</p>
+                            </div>
+                        </div>
+                        <div class="form-field-item">
+                            <span class="field-icon">📧</span>
+                            <div>
+                                <strong>Email &amp; Mobile</strong>
+                                <p>For confirmation and communication</p>
+                            </div>
+                        </div>
+                        <div class="form-field-item">
+                            <span class="field-icon">🎓</span>
+                            <div>
+                                <strong>Year &amp; Branch</strong>
+                                <p>2nd/3rd Year — CSE, IT, AIML, AIDS, ETC, Mech, Electrical</p>
+                            </div>
+                        </div>
+                        <div class="form-field-item">
+                            <span class="field-icon">👥</span>
+                            <div>
+                                <strong>Team Details (if Duo)</strong>
+                                <p>Teammate's name, email, mobile &amp; team name</p>
+                            </div>
+                        </div>
+                        <div class="form-field-item">
+                            <span class="field-icon">🧾</span>
+                            <div>
+                                <strong>Payment Receipt</strong>
+                                <p>Screenshot of successful payment (max 100 MB)</p>
+                            </div>
+                        </div>
+                        <div class="form-field-item">
+                            <span class="field-icon">🔢</span>
+                            <div>
+                                <strong>UTR / Transaction ID</strong>
+                                <p>Unique transaction reference from your payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS / CALLOUT -->
+        <section class="section">
+            <div class="container">
+                <div class="callout-card glass-card reveal">
+                    <div class="callout-stat">
+                        <div class="stat-num gradient-text">1</div>
+                        <div class="stat-label">Day of Learning</div>
+                    </div>
+                    <div class="callout-divider"></div>
+                    <div class="callout-stat">
+                        <div class="stat-num gradient-text">2</div>
+                        <div class="stat-label">Max Team Members</div>
+                    </div>
+                    <div class="callout-divider"></div>
+                    <div class="callout-stat">
+                        <div class="stat-num gradient-text">∞</div>
+                        <div class="stat-label">Possibilities</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="footer-inner">
+                    <div class="footer-logo">LUNARC <span>2.0</span></div>
+                    <p class="footer-tagline">Don't Just Use AI. Build Your Own. 🚀</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSexWOxyiI9WYIoBmGdp2Th3JpQERR3GJZQtqqF0eM6RXPXx4g/viewform?usp=publish-editor" target="_blank" class="btn-3d">Register Now →</a>
+                    <div class="footer-divider"></div>
+                    <p class="footer-org">Organized by <strong>SuiGeneris</strong> | Department of Computer Science &amp; Engineering<br>S. B. Jain Institute of Technology, Management &amp; Research, Nagpur</p>
+                    <p class="footer-copy">&copy; 2026 LUNARC 2.0. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
