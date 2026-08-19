@@ -15,6 +15,7 @@ function initializeSite() {
             document.body.style.overflow = 'auto';
             initReveal();
             initShader();
+            initCountdown();
         }, 800);
     }, 600);
 }
@@ -107,4 +108,46 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 60 ? '0 4px 30px rgba(0,0,0,0.6)' : 'none';
 });
 
-document.addEventListener('DOMContentLoaded', () => { document.body.style.overflow = 'hidden'; });
+document.addEventListener('DOMContentLoaded', () => { 
+    document.body.style.overflow = 'hidden'; 
+    initCountdown();
+});
+
+// ---------- Early Bird Countdown Timer ----------
+function initCountdown() {
+    // Early Bird deadline: August 23, 2026 23:59:59 (Month index 7 = August)
+    const targetDate = new Date(2026, 7, 23, 23, 59, 59).getTime();
+    
+    function updateTimer() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+        
+        const daysEl = document.getElementById('cd-days');
+        const hoursEl = document.getElementById('cd-hours');
+        const minsEl = document.getElementById('cd-mins');
+        const secsEl = document.getElementById('cd-secs');
+        const timerContainer = document.getElementById('earlybird-timer');
+        
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+        
+        if (isNaN(diff) || diff <= 0) {
+            if (timerContainer) {
+                timerContainer.innerHTML = '<span style="color:#ef4444;font-weight:700;font-size:1.1rem">🔥 EARLY BIRD EXPIRED — REGULAR PRICING (₹110) APPLIES</span>';
+            }
+            return;
+        }
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minsEl.textContent = String(mins).padStart(2, '0');
+        secsEl.textContent = String(secs).padStart(2, '0');
+    }
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}

@@ -79,8 +79,20 @@ ul{list-style:none}
 .sub-1{color:var(--blue-light)}.sub-2{color:var(--cyan)}.sub-3{color:var(--purple-light)}
 .hero-card{max-width:680px;margin:0 auto 2.5rem;padding:1.5rem 2rem;font-size:1.05rem;color:var(--text-sub);line-height:1.8}
 .hero-card strong{color:var(--text)}
-.hero-details{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.hero-details{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem}
 .detail-chip{padding:.45rem 1.1rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:50px;font-size:.85rem;font-weight:500;color:var(--text-sub)}
+
+/* COUNTDOWN TIMER */
+.countdown-card{max-width:520px;margin:0 auto 2.2rem;padding:1.2rem 1.8rem;text-align:center;background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.28);border-radius:18px;backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.countdown-header{font-size:.85rem;font-weight:700;letter-spacing:1.5px;color:var(--cyan-light);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.pulse-fire{display:inline-block;animation:firePulse 1.2s ease-in-out infinite alternate}
+@keyframes firePulse{0%{transform:scale(1)}100%{transform:scale(1.25);filter:drop-shadow(0 0 8px rgba(251,146,60,0.8))}}
+
+.countdown-timer{display:flex;align-items:center;justify-content:center;gap:.6rem}
+.timer-box{display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(15,23,42,0.75);border:1px solid rgba(37,99,235,0.35);border-radius:12px;padding:.6rem .8rem;min-width:68px;box-shadow:inset 0 1px 1px rgba(255,255,255,0.1)}
+.timer-num{font-size:1.9rem;font-weight:900;font-family:'Inter',sans-serif;line-height:1;color:var(--cyan-light);text-shadow:0 0 12px rgba(56,189,248,0.6)}
+.timer-unit{font-size:.65rem;font-weight:700;color:var(--text-sub);letter-spacing:1px;margin-top:.3rem}
+.timer-sep{font-size:1.6rem;font-weight:900;color:var(--blue-light);opacity:.6;animation:blink 1s ease-in-out infinite}
 
 /* SECTIONS */
 .section{padding:7rem 0}
