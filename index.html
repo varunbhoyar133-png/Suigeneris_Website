@@ -34,14 +34,24 @@
         <nav id="navbar">
             <div class="nav-container">
                 <div class="nav-logo nav-left">
-                    <img src="assets/sbjitmr.png" alt="SBJITMR" onerror="this.style.display='none';document.getElementById('nav-left-txt').style.display='block'">
-                    <img src="assets/collab1.png" alt="Collaborator 1" class="nav-collab-logo" onerror="this.style.display='none'">
+                    <img src="assets/sbjitmr.png" alt="SBJITMR" class="nav-main-logo" onerror="this.style.display='none';document.getElementById('nav-left-txt').style.display='block'">
+                    <span class="nav-divider"></span>
+                    <div class="nav-collab-group">
+                        <div class="nav-collab-item" data-tooltip="Collaborator">
+                            <img src="assets/collab1.png" alt="Collaborator 1" class="nav-collab-logo" onerror="this.style.display='none'">
+                        </div>
+                    </div>
                     <span id="nav-left-txt" class="nav-logo-txt" style="display:none">SBJITMR</span>
                 </div>
                 <div class="nav-center-logo">LUNARC <span>2.0</span></div>
                 <div class="nav-logo nav-right">
-                    <img src="assets/collab2.png" alt="Collaborator 2" class="nav-collab-logo" onerror="this.style.display='none'">
-                    <img src="assets/suigeneris.png" alt="SuiGeneris" onerror="this.style.display='none';document.getElementById('nav-right-txt').style.display='block'">
+                    <div class="nav-collab-group">
+                        <div class="nav-collab-item" data-tooltip="Collaborator: Sevryn Labs">
+                            <img src="assets/collab3.png" alt="Sevryn Labs" class="nav-collab-logo" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <span class="nav-divider"></span>
+                    <img src="assets/suigeneris.png" alt="SuiGeneris" class="nav-main-logo" onerror="this.style.display='none';document.getElementById('nav-right-txt').style.display='block'">
                     <span id="nav-right-txt" class="nav-logo-txt" style="display:none">SuiGeneris</span>
                 </div>
             </div>
@@ -359,6 +369,27 @@
                                 <p>Unique transaction reference from your payment</p>
                             </div>
                         </div>
+                <!-- Contact / For Queries -->
+                <div class="contact-card glass-card reveal">
+                    <div class="contact-header">
+                        <span class="contact-icon">📞</span>
+                        <h3>For Queries &amp; Support</h3>
+                    </div>
+                    <div class="contact-grid">
+                        <a href="tel:8010650289" class="contact-item">
+                            <div class="contact-avatar">👨‍💻</div>
+                            <div class="contact-info">
+                                <span class="contact-name">Roshan Mandale</span>
+                                <span class="contact-phone">📱 8010650289</span>
+                            </div>
+                        </a>
+                        <a href="tel:8999830998" class="contact-item">
+                            <div class="contact-avatar">👨‍💻</div>
+                            <div class="contact-info">
+                                <span class="contact-name">Gaurav Dafare</span>
+                                <span class="contact-phone">📱 8999830998</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -393,6 +424,16 @@
                     <div class="footer-logo">LUNARC <span>2.0</span></div>
                     <p class="footer-tagline">Don't Just Use AI. Build Your Own. 🚀</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSexWOxyiI9WYIoBmGdp2Th3JpQERR3GJZQtqqF0eM6RXPXx4g/viewform?usp=publish-editor" target="_blank" class="btn-3d">Register Now →</a>
+                    
+                    <div class="footer-contacts">
+                        <span class="footer-contacts-title">📞 Event Leads &amp; Queries:</span>
+                        <div class="footer-contacts-links">
+                            <a href="tel:8010650289">Roshan Mandale: <strong>8010650289</strong></a>
+                            <span class="dot-sep">•</span>
+                            <a href="tel:8999830998">Gaurav Dafare: <strong>8999830998</strong></a>
+                        </div>
+                    </div>
+
                     <div class="footer-divider"></div>
                     <p class="footer-org">Organized by <strong>SuiGeneris</strong> | Department of Computer Science &amp; Engineering<br>S. B. Jain Institute of Technology, Management &amp; Research, Nagpur</p>
                     <p class="footer-copy">&copy; 2026 LUNARC 2.0. All rights reserved.</p>
