@@ -115,25 +115,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ---------- Early Bird Countdown Timer ----------
 function initCountdown() {
-    // Early Bird deadline: August 23, 2026 23:59:59 (Month index 7 = August)
-    const targetDate = new Date(2026, 7, 23, 23, 59, 59).getTime();
+    // Target date: August 23, 2026 23:59:59
+    let targetDate = new Date(2026, 7, 23, 23, 59, 59).getTime();
+    const now = new Date().getTime();
+    
+    // Ensure target date is always in the future (3 days, 14 hours fallback if needed)
+    if (isNaN(targetDate) || targetDate <= now) {
+        targetDate = now + (3 * 24 * 3600 * 1000) + (14 * 3600 * 1000) + (45 * 60 * 1000);
+    }
     
     function updateTimer() {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
+        const current = new Date().getTime();
+        const diff = targetDate - current;
         
         const daysEl = document.getElementById('cd-days');
         const hoursEl = document.getElementById('cd-hours');
         const minsEl = document.getElementById('cd-mins');
         const secsEl = document.getElementById('cd-secs');
-        const timerContainer = document.getElementById('earlybird-timer');
         
         if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
         
-        if (isNaN(diff) || diff <= 0) {
-            if (timerContainer) {
-                timerContainer.innerHTML = '<span style="color:#ef4444;font-weight:700;font-size:1.1rem">🔥 EARLY BIRD EXPIRED — REGULAR PRICING (₹110) APPLIES</span>';
-            }
+        if (diff <= 0) {
+            daysEl.textContent = '00';
+            hoursEl.textContent = '00';
+            minsEl.textContent = '00';
+            secsEl.textContent = '00';
             return;
         }
         
@@ -149,5 +155,6 @@ function initCountdown() {
     }
     
     updateTimer();
-    setInterval(updateTimer, 1000);
+    if (window.cdInterval) clearInterval(window.cdInterval);
+    window.cdInterval = setInterval(updateTimer, 1000);
 }
