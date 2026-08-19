@@ -218,22 +218,79 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--border)}
 .prize-card p{font-size:.85rem;color:var(--text-sub);line-height:1.5}
 .prize-note{text-align:center;font-size:.85rem;color:var(--text-muted);margin-top:1rem}
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .hero-title{font-size:3.8rem;letter-spacing:-2px}
-    .hero-sub{font-size:1rem;letter-spacing:.5px}
-    .section-header h2{font-size:2.2rem}
-    .timeline::before{left:14px}
-    .timeline-item{grid-template-columns:20px 1fr;gap:.8rem}
-    .timeline-time{display:none}
-    .timeline-node{padding-top:1rem}
-    .pricing-card.featured{transform:none}
-    .callout-card{gap:1.5rem}
-    .callout-divider{display:none}
-    .nav-logo img{height:28px}
-    .nav-center-logo{font-size:1.1rem;letter-spacing:1px}
+/* RESPONSIVE DESIGN FOR MOBILE & TABLETS */
+@media (max-width: 768px) {
+    .container { padding: 0 1.2rem; }
+    
+    /* NAVBAR MOBILE */
+    #navbar { padding: 0.6rem 0.8rem; }
+    .nav-container { gap: 6px; }
+    .nav-logo { gap: 6px; }
+    .nav-main-logo { height: 26px!important; }
+    .nav-collab-group { gap: 4px; }
+    .nav-collab-item { padding: 2px 5px; border-radius: 6px; }
+    .nav-collab-logo { height: 20px!important; }
+    .nav-divider { height: 18px; margin: 0 2px; }
+    .nav-center-logo { font-size: 1.15rem; letter-spacing: 1px; }
+
+    /* HERO MOBILE */
+    #hero { padding-top: 80px; padding-bottom: 2rem; }
+    .hero-container { padding-top: 2rem; padding-bottom: 2rem; }
+    .hero-badge { font-size: 0.75rem; padding: 0.4rem 0.9rem; text-align: center; }
+    .hero-title { font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 1rem; }
+    .hero-sub { font-size: 1rem; letter-spacing: 0.5px; margin-bottom: 1.5rem; }
+    .hero-card { padding: 1.2rem 1.4rem; font-size: 0.95rem; }
+    .hero-details { gap: 0.5rem; }
+    .detail-chip { font-size: 0.78rem; padding: 0.35rem 0.85rem; }
+    .btn-3d { padding: 0.85rem 1.8rem; font-size: 0.95rem; width: 100%; text-align: center; justify-content: center; }
+
+    /* SECTIONS */
+    .section { padding: 4rem 0; }
+    .section-header { margin-bottom: 2.5rem; }
+    .section-header h2 { font-size: 2.2rem; }
+
+    /* PRIZE POOL MOBILE */
+    .prize-pool-banner { padding: 2rem 1rem; border-radius: 16px; }
+    .prize-pool-amount { font-size: 3.2rem; }
+
+    /* TIMELINE MOBILE */
+    .timeline::before { left: 14px; }
+    .timeline-item { grid-template-columns: 20px 1fr; gap: 0.8rem; }
+    .timeline-time { display: none; }
+    .timeline-node { padding-top: 0.8rem; }
+    .timeline-card { padding: 0.9rem 1.1rem; }
+
+    /* PRICING & FORM INFO MOBILE */
+    .pricing-card { max-width: 100%; padding: 1.8rem 1.4rem; }
+    .form-info-section { padding: 1.5rem 1.2rem; margin-top: 2.5rem; }
+    .form-fields-grid { grid-template-columns: 1fr; gap: 0.9rem; }
+
+    /* CONTACT CARDS MOBILE */
+    .contact-card { padding: 1.5rem 1rem; }
+    .contact-grid { flex-direction: column; width: 100%; gap: 0.8rem; }
+    .contact-item { width: 100%; justify-content: flex-start; padding: 0.8rem 1.2rem; }
+
+    /* CALLOUT STATS MOBILE */
+    .callout-card { gap: 1.5rem; padding: 2rem 1rem; }
+    .stat-num { font-size: 2.8rem; }
+    .callout-divider { display: none; }
+
+    /* FOOTER MOBILE */
+    footer { padding: 3rem 0 1.5rem; }
+    .footer-contacts-links { flex-direction: column; gap: 0.4rem; }
+    .dot-sep { display: none; }
+    .footer-org { font-size: 0.78rem; padding: 0 0.5rem; }
 }
-@media(max-width:480px){
-    .hero-title{font-size:2.8rem}
-    .splash-logo{font-size:3rem}
+
+@media (max-width: 480px) {
+    #navbar { padding: 0.5rem 0.5rem; }
+    .nav-container { padding: 0 0.2rem; }
+    .nav-main-logo { height: 22px!important; }
+    .nav-collab-logo { height: 16px!important; }
+    .nav-center-logo { font-size: 1rem; letter-spacing: 0.5px; }
+    .nav-divider { display: none; }
+    
+    .hero-title { font-size: 2.8rem; }
+    .splash-logo { font-size: 3rem; }
+    .prize-pool-amount { font-size: 2.6rem; }
 }
