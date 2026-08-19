@@ -50,8 +50,9 @@ ul{list-style:none}
 /* NAVBAR */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;background:rgba(2,4,10,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:all .3s ease}
 .nav-container{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center}
+.nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo img{height:40px;width:auto;filter:brightness(0) invert(1);opacity:.8}
+.nav-collab-logo{height:32px!important;filter:none!important;opacity:1!important}
 .nav-logo-txt{font-size:.85rem;font-weight:700;letter-spacing:1px;color:var(--text-sub)}
 .nav-center-logo{font-size:1.6rem;font-weight:900;letter-spacing:3px}
 .nav-center-logo span{color:var(--blue-light)}
